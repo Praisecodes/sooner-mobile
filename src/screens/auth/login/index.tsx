@@ -3,12 +3,14 @@ import React from 'react';
 import RootLayout from '../../rootLayout';
 import Input from '../../../components/common/input';
 import Button from '../../../components/common/button';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { AuthStackParamList } from '../../../routers';
+import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack';
+import { AppStackParamList, AuthStackParamList } from '../../../routers';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = ({ navigation }: NativeStackScreenProps<AuthStackParamList, "login">) => {
+  const appNavigation = useNavigation<NativeStackNavigationProp<AppStackParamList>>();
   const formik = useFormik({
     initialValues: {
       "email": "",
@@ -16,6 +18,7 @@ const Login = ({ navigation }: NativeStackScreenProps<AuthStackParamList, "login
     },
     onSubmit: ({ email, password }) => {
       console.log(email, password);
+      appNavigation.navigate("app", { screen: "dashboard" });
     },
     validationSchema: object({
       email: string().email("Please enter a valid email").required("Email is required"),
