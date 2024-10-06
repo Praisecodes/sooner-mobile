@@ -1,6 +1,5 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { AuthStack } from '.'
+import React from 'react';
+import { AuthStack } from '.';
 import Onboarding from '../screens/auth/onboarding';
 import Login from '../screens/auth/login';
 import Signup from '../screens/auth/signup';
