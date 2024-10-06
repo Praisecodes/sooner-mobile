@@ -1,11 +1,14 @@
 import { View, Text } from 'react-native';
 import React from 'react';
+import RootLayout from '../../rootLayout';
 
 const Settings = () => {
   return (
-    <View>
-      <Text>Settings</Text>
-    </View>
+    <RootLayout>
+      <View>
+        <Text>Settings</Text>
+      </View>
+    </RootLayout>
   )
 }
 

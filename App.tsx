@@ -1,6 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import AppStack from './src/routers/app_stack';
 import { useFonts } from 'expo-font';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -11,11 +14,13 @@ export default function App() {
     "inter-thin": require('./assets/fonts/Inter-Thin.ttf'),
   });
 
-  if(!fontsLoaded) return null;
+  if (!fontsLoaded) return null;
 
   return (
-    <NavigationContainer>
-      <AppStack />
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <AppStack />
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }
