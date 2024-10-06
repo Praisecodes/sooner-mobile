@@ -7,6 +7,8 @@ interface Props {
 }
 
 const ProjectCard = ({ project }: Props) => {
+  const colors: ColorsTyped = Colors;
+
   return (
     <TouchableWithoutFeedback>
       <View className={`w-full bg-grey-200 rounded-3xl border-[0.4px] border-grey-300 py-4 px-5`}>
@@ -22,8 +24,7 @@ const ProjectCard = ({ project }: Props) => {
           <View
             className={`w-2 h-2 rounded-full`}
             style={{
-              // @ts-ignore
-              backgroundColor: Colors[project.top_language].color
+              backgroundColor: colors[project.top_language as keyof typeof colors].color
             }}
           />
 
