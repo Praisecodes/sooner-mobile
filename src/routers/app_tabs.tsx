@@ -50,7 +50,7 @@ const Tabs = () => {
         component={Projects}
         options={{
           tabBarIcon: ({ focused }) => (
-            !focused ? <Image source={Folder} className={`w-5 h-5`} /> : <Image source={FolderSelected} className={`w-5 h-5`} />
+            !focused ? <Image source={Folder} className={`w-[23px] h-[21px]`} /> : <Image source={FolderSelected} className={`w-[23px] h-[21px]`} />
           )
         }}
       />
