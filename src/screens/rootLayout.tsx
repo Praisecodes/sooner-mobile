@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 const RootLayout = ({ children }: { children: React.ReactNode; }) => {
   return (
     <SafeAreaView className={`flex-1 bg-primary`}>
-      <StatusBar backgroundColor='#09090B' style='light' />
+      <StatusBar backgroundColor='#09090B' style='light' translucent={false} />
       {children}
     </SafeAreaView>
   )
